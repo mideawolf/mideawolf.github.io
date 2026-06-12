@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Performance Nonwoven Solutions | Chris Hsu</title>
+    <style>
+        /* CSS Variables for Consistent Branding */
+        :root {
+            --primary-blue: #004b87;
+            --accent-blue: #007acc;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--light-bg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            background-color: #f0f0f0;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #005f9e;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Headers */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--accent-blue);
+            display: block;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Nonwovens Section */
+        .about-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .about-text ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .about-text li {
+            margin-bottom: 10px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Advantages / Why Choose Us */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+            border-top: 5px solid var(--primary-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-top-color: var(--accent-blue);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Catalog Call-to-Action Section */
+        .catalog-cta {
+            background: var(--white);
+            padding: 50px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .catalog-cta h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .catalog-cta p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 10px auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--white);
+            padding: 50px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .contact-card {
+            display: inline-block;
+            text-align: left;
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .contact-card h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .contact-card .job-title {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .contact-info-item {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-item strong {
+            color: var(--text-main);
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        .contact-info-item a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: var(--white);
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-wrapper {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .contact-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>High-Performance Nonwoven Solutions</h1>
+        <p>Helping Global Brands Source High-Performance Nonwoven Solutions | 15-Year Factory Expert | Cross-Border E-commerce Partner</p>
+        <a href="https://drive.google.com/file/d/1wF6dVC-1tr-edB8kJieuk273vWp6-Jff/view?usp=drive_link" target="_blank" class="btn-primary">View Corporate Catalog</a>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Understanding Nonwoven Fabrics</h2>
+        <div class="about-wrapper">
+            <div class="about-text">
+                <h3>The Material of the Future</h3>
+                <p>Nonwoven fabrics are engineered materials created by bonding or interlocking fibers together using mechanical, thermal, or chemical processes. Unlike traditional textiles, they are neither woven nor knitted, allowing for highly specialized performance characteristics.</p>
+                <ul>
+                    <li><strong>Versatile Applications:</strong> The primary material for premium dry and wet wipes, medical hygiene products, and industrial filtering.</li>
+                    <li><strong>Customizable Performance:</strong> Can be engineered for specific levels of absorbency, liquid repellency, resilience, softness, and strength.</li>
+                    <li><strong>Cost-Effective & Efficient:</strong> Advanced manufacturing ensures high output with consistent quality, suitable for both single-use and durable goods.</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="factory-image.jpg" alt="Modern Nonwoven Fabric Manufacturing Facility">
+            </div>
+        </div>
+
+        <h2 class="section-title">Why Choose Us as Your Partner?</h2>
+        <div class="advantages-grid">
+            <div class="card">
+                <h3>🏭 Factory-Direct Advantage</h3>
+                <p>Get the most competitive pricing straight from the source. No trading markups, just pure value for your business.</p>
+            </div>
+            
+            <div class="card">
+                <h3>🔄 One-Stop Efficiency</h3>
+                <p>Save time with our integrated supply chain. Whether it’s our own production or specialized items from our partners, we handle it all.</p>
+            </div>
+            
+            <div class="card">
+                <h3>⏱️ Proven Punctuality</h3>
+                <p>Stop worrying about delays. We take pride in our logistics, with 96% of our orders completed ahead of schedule.</p>
+            </div>
+            
+            <div class="card">
+                <h3>🛡️ Quality You Can Trust</h3>
+                <p>Our rigorous 5-tier QC protocol (from raw materials to pre-shipment) ensures that your brand reputation is always protected.</p>
+            </div>
+            
+            <div class="card">
+                <h3>📜 Fully Certified & Compliant</h3>
+                <p>We meet the strictest global standards (BSCI, ISO, OEKO-TEX, FSC) and maintain complete testing documentation for our dry and wet wipes.</p>
+            </div>
+            
+            <div class="card">
+                <h3>🤝 Transparent & Ethical</h3>
+                <p>We operate with integrity. We are "audit-ready" for any social responsibility or security assessments you require.</p>
+            </div>
+        </div>
+
+        <div class="catalog-cta">
+            <h3>Explore Our Full Product Range</h3>
+            <p>Discover our comprehensive specifications, material applications, and high-performance solutions designed for global brands.</p>
+            <a href="https://drive.google.com/file/d/1wF6dVC-1tr-edB8kJieuk273vWp6-Jff/view?usp=drive_link" target="_blank" class="btn-secondary">📥 Open Product Catalog (PDF)</a>
+        </div>
+
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-section">
+            <div class="contact-card">
+                <h2>Chris Hsu</h2>
+                <span class="job-title">Business Development Specialist</span>
+                
+                <div class="contact-info-item">
+                    <strong>Email:</strong> <a href="mailto:chrishsu@nonwoven666.com">chrishsu@nonwoven666.com</a>
+                </div>
+                <div class="contact-info-item" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+                    <p><em>"I am dedicated to helping global brands build efficient supply chains and source top-tier nonwoven products."</em></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Chris Hsu - High-Performance Nonwoven Solutions. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
